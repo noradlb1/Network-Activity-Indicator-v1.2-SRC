@@ -1,0 +1,6 @@
+﻿cl : Command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  stdafx.cpp
+cl : Command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  NetworkIndicator.cpp
+NetworkIndicator.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+  NetworkIndicator.vcxproj -> C:\Users\MONSTERMC\Desktop\Network Activity Indicator v1.2 src\Debug\NetworkIndicator.exe

@@ -1,0 +1,286 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""resource.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_NETWORKINDICATOR    ICON    DISCARDABLE     "res\\NetworkIndicator.ico"
+IDI_SMALL               ICON    DISCARDABLE     "res\\small.ico"
+IDI_ICON_SEND           ICON    DISCARDABLE     "res\\send.ico"
+IDI_ICON_ACTIVE         ICON    DISCARDABLE     "res\\active.ico"
+IDI_ICON_INACTIVE       ICON    DISCARDABLE     "res\\inactive.ico"
+IDI_ICON_RECEIVE        ICON    DISCARDABLE     "res\\receive.ico"
+IDI_ICON_ACTIVEVISTA    ICON    DISCARDABLE     "res\\active_vista.ico"
+IDI_ICON_INACTIVEVISTA  ICON    DISCARDABLE     "res\\inactive_vista.ico"
+IDI_ICON_RECEIVEVISTA   ICON    DISCARDABLE     "res\\receive_vista.ico"
+IDI_ICON_SENDVISTA      ICON    DISCARDABLE     "res\\send_vista.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDM_TRAY MENU DISCARDABLE 
+BEGIN
+    POPUP "POPUP"
+    BEGIN
+        MENUITEM "About",                       IDM_ABOUT
+        MENUITEM "Settings",                    IDM_SETTINGS
+        MENUITEM SEPARATOR
+        MENUITEM "Network Traffic",             IDM_TRAFFIC
+        MENUITEM "Network Statistics",          IDM_STATISTICS
+        MENUITEM SEPARATOR
+        MENUITEM "Network Connections",         IDM_NETWORK
+        MENUITEM "Windows Firewall Settings",   IDM_FIREWALL
+        MENUITEM "Network and Sharing Center",  ID_POPUP_NETWORKCENTER
+        MENUITEM SEPARATOR
+        MENUITEM "Exit",                        IDM_EXIT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDC_NETWORKINDICATOR ACCELERATORS MOVEABLE PURE 
+BEGIN
+    "?",            IDM_ABOUT,              ASCII,  ALT
+    "/",            IDM_ABOUT,              ASCII,  ALT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 198, 74
+STYLE DS_MODALFRAME | DS_CENTER | WS_CAPTION | WS_SYSMENU
+CAPTION "About Network Activity Indicator"
+FONT 8, "Tahoma"
+BEGIN
+    ICON            IDI_NETWORKINDICATOR,IDC_MYICON,14,9,20,20
+    LTEXT           "Network Activity Indicator 1.2",IDC_STATIC,49,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "© 2009-2010 Igor Tolmachev, IT Samples",IDC_STATIC,49,
+                    21,144,8
+    DEFPUSHBUTTON   "OK",IDOK,138,50,49,15,WS_GROUP
+    LTEXT           "http://www.itsamples.com",IDC_STATIC,49,32,119,8
+END
+
+IDD_DIALOG_SETTINGS DIALOG DISCARDABLE  0, 0, 183, 102
+STYLE DS_MODALFRAME | DS_CENTERMOUSE | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Settings"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,124,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,124,25,50,14
+    CONTROL         "Load at Windows Startup",IDC_CHECK_STARTUP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,84,96,10
+    EDITTEXT        IDC_EDIT_DURATION,77,8,28,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Blink Duration (ms):",IDC_STATIC,7,10,62,8
+    CONTROL         "Use Vista style icons",IDC_CHECK_VISTASTYLE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,72,81,10
+    CONTROL         "Display TCP traffic",IDC_CHECK_DISPLAYTCP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,29,98,10
+    CONTROL         "Display UDP traffic",IDC_CHECK_DISPLAYUDP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,41,98,10
+    CONTROL         "Display ICMP traffic",IDC_CHECK_DISPLAYICMP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,54,98,10
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDVERT,113,6,1,90
+END
+
+IDD_DIALOG_STATISTICS DIALOGEX 0, 0, 214, 231
+STYLE DS_MODALFRAME | DS_CENTERMOUSE | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION " Statistics"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Close",IDOK,161,213,50,14
+    PUSHBUTTON      "Refresh",IDC_BUTTON_REFRESH,105,213,50,14
+    CONTROL         "List1",IDC_LIST_INFO,"SysListView32",LVS_REPORT | 
+                    LVS_AUTOARRANGE | LVS_ALIGNLEFT | LVS_NOSCROLL | 
+                    LVS_NOCOLUMNHEADER | WS_TABSTOP,2,2,209,206,
+                    WS_EX_STATICEDGE
+END
+
+IDD_DIALOG_TRAFFIC DIALOG DISCARDABLE  0, 0, 214, 130
+STYLE DS_MODALFRAME | DS_CENTERMOUSE | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Network Traffic"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Close",IDOK,159,112,50,14
+    PUSHBUTTON      "Refresh",IDC_BUTTON_REFRESH,103,112,50,14
+    COMBOBOX        IDC_COMBO_ADAPTERS,3,17,206,161,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Network Interface:",IDC_STATIC,4,5,60,8
+    LTEXT           "NOTE: Network Interface traffic includes all service packets and usually is different (up to 20% more) from the data shown in the Network Connection Status dialog.",
+                    IDC_STATIC,5,35,205,28
+    LTEXT           "Received:",IDC_STATIC,19,91,51,8
+    LTEXT           "Sent:",IDC_STATIC,19,79,51,8
+    LTEXT           "",IDC_STATIC_SENT,78,79,64,8
+    LTEXT           "",IDC_STATIC_RECEIVED,78,91,64,8
+    LTEXT           "Network Interface traffic:",IDC_STATIC,5,66,79,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,0,106,213,1
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_DIALOG_SETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 176
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 95
+    END
+
+    IDD_DIALOG_STATISTICS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 207
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 224
+    END
+
+    IDD_DIALOG_TRAFFIC, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 207
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 123
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,2,0,5
+ PRODUCTVERSION 1,2,0,5
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "AuthorName", "Igor Tolmachev\0"
+            VALUE "Comments", "Home page: www.itsamples.com\0"
+            VALUE "CompanyName", "ITSamples.com\0"
+            VALUE "FileDescription", "Network Activity Indicator system tray utility\0"
+            VALUE "FileVersion", "1.2.0.5\0"
+            VALUE "InternalName", "NetworkIndicator\0"
+            VALUE "LegalCopyright", "© 2009-2010  Igor Tolmachev, IT Samples\0"
+            VALUE "LegalTrademarks", "Network Activity Indicator™\0"
+            VALUE "OriginalFilename", "NetworkIndicator.exe\0"
+            VALUE "ProductName", "Network Activity Indicator for Windows 7\0"
+            VALUE "ProductVersion", "1.2.0.5\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_APP_TITLE           "NetworkIndicator"
+    IDC_NETWORKINDICATOR    "NETWORKINDICATOR"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
